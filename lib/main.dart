@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:lista_de_tareas/views/widgets/FormFields.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      title: 'Lista de Tareas',
       home: Scaffold(
+        appBar: AppBar(
+          title: Text('Lista de Tareas'),
+        ),
         body: Center(
-          child: Text('Hello World!'),
+          child: FormFieldsWidget(), // Aquí es donde agregas tu widget
         ),
       ),
     );
