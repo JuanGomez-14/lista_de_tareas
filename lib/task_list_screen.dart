@@ -20,9 +20,11 @@ class _TaskListScreenState extends State<TaskListScreen> {
         tasks: _taskController.tasks,
         onTaskCompleted: (index) {
           _taskController.toggleTaskCompletion(index);
+          setState(() {});
         },
         onTaskDeleted: (index) {
           _taskController.removeTask(index);
+          setState(() {});
         },
       ),
       floatingActionButton: FloatingActionButton(
@@ -59,6 +61,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
               onPressed: () {
                 _taskController.addTask(newTaskTitle);
                 Navigator.of(context).pop();
+                setState(() {});
               },
               child: Text('Aceptar'),
             ),
