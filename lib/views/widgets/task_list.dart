@@ -4,13 +4,11 @@ class TaskList extends StatelessWidget {
   final List<Map<String, dynamic>> tasks;
   final Function(int) onTaskCompleted;
   final Function(int) onTaskDeleted;
-  final Function() onTaskDeletedAndRefresh;
 
   TaskList({
     required this.tasks,
     required this.onTaskCompleted,
     required this.onTaskDeleted,
-    required this.onTaskDeletedAndRefresh,
   });
 
   @override
@@ -30,7 +28,6 @@ class TaskList extends StatelessWidget {
             icon: Icon(Icons.delete),
             onPressed: () {
               onTaskDeleted(index);
-              onTaskDeletedAndRefresh();
             },
           ),
         );
